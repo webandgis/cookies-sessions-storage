@@ -1,0 +1,23 @@
+<h1>Bienvenido-Perfil de Usuario</h1>
+<p>Nombre: {{first_name}} {{last_name}}</p>
+<p>Email: {{email}}</p>
+<p>Edad: {{age}}</p>
+<form action="logout" method="POST">
+  <button type="submit">Logout</button>
+</form>
+
+<h1>Lista de Productos</h1>
+<div id="product-container">
+  <ul>
+    {{#if products.length}}
+      {{#each products}}
+        <li>
+          {{this.name}}, {{this.category}}, {{this.price}}, {{this.stock}}
+          <img src="{{this.image}}" alt="Imagen del producto" style="width: 20%;" >
+        </li>
+      {{/each}}
+    {{else}}
+      <p>No hay productos disponibles.</p>
+    {{/if}}
+  </ul>
+</div>
